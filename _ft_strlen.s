@@ -18,8 +18,8 @@ _ft_strlen:
 
 _compare:
 	cmp	byte[rdi + rax], 0	; check if string is at terminating character (0)
-	je	_return				; if string is at terminating character, return rax
-	inc rax					; increment counter (rax) by 1
+	je	_return				; if string is at terminating character, jump to _return label
+	inc rax					; if string is not at the end, increment counter (rax) by 1
 	jmp _compare			; jump back to the beginning of this label
 
 _return:

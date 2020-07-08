@@ -18,7 +18,7 @@ _ft_strcpy:
 	jmp _copy					; jump to _copy label
 
 _copy:
-	mov	dl, byte[rsi + rcx]		; move the first character of src in dh
+	mov	dl, byte[rsi + rcx]		; move the first character of src in dl
 	mov	byte[rdi + rcx], dl		; move the first character of src in rdi
 	cmp	dl, 0					; check if src is at the end
 	jne	_increment				; if src is not at the end, jump to _increment

@@ -6,7 +6,7 @@
 #    By: gbouwen <marvin@codam.nl>                    +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/02/07 16:19:39 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/07/08 15:55:08 by gbouwen       ########   odam.nl          #
+#    Updated: 2020/07/08 18:12:36 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ SOURCE_S =	_ft_strlen.s \
 			_ft_write.s \
 			_ft_read.s \
 			_ft_strdup.s \
-			_ft_atoi_base.s
 
 SOURCE_O = $(SOURCE_S:.s=.o)
 

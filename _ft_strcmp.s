@@ -19,10 +19,10 @@ _ft_strcmp:
 
 _compare:
 	mov	dl, byte[rdi + rcx]	; move the character of s1 in dl
-	mov	dh, byte[rsi + rcx]	; move the character of s2 in dh
+	mov	al, byte[rsi + rcx]	; move the character of s2 in dh
 	cmp	dl, 0				; check if string is at terminating character
 	je	_return				; if the string is at terminating character, return
-	cmp dl, dh				; compare the characters of s1 with s2
+	cmp dl, al				; compare the characters of s1 with s2
 	je _increment			; if equal, jump to increment label
 	jmp	_return				; if the characters are different, return
 
@@ -31,15 +31,6 @@ _increment:
 	jmp	_compare			; jump to _compare label
 
 _return:
-	cmp dl, dh				; compare the characters of s1 and s2
-	jg	_return_positive	; if dl > dh, jump to _return_positive label
-	jl	_return_negative	; if dl < dh, jump to _return_negative label
+	sub rdx, rax			; subtract the value of rax from rdx in rdx
+	mov	rax, rdx			; move rdx in rax
 	ret						; return rax (0)
-
-_return_positive:
-	mov	rax, 1				; set rax to 1
-	ret						; return rax (1)
-
-_return_negative:
-	mov	rax, -1				; set rax to -1
-	ret						; return rax (-1)

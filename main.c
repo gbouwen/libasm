@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/01 14:28:33 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/05 14:54:17 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/05 14:56:54 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,8 +146,8 @@ int	main(void)
 
 	buf = malloc(500);
 	printf("1:\n");
-	fd_read_1 = open("example_1.txt", O_RDONLY);
-	fd_read_2 = open("example_2.txt", O_RDONLY);
+	fd_read_1 = open("txt_files/example_1.txt", O_RDONLY);
+	fd_read_2 = open("txt_files/example_2.txt", O_RDONLY);
 	ret_read = read(fd_read_1, buf, 4);
 	printf("   read: '%s',    ret_read: %d\n", buf, ret_read);
 	ret_ft_read = ft_read(fd_read_2, buf, 4);

@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/01 14:28:33 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/07/08 18:15:59 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/05 14:56:54 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,8 +126,8 @@ int	main(void)
 	printf("error: %d, error_message: %s\n", error_write, strerror(error_write));
 
 	printf("4:\n");
-	fd_write_1 = open("example_1.txt", O_WRONLY);
-	fd_write_2 = open("example_2.txt", O_WRONLY);
+	fd_write_1 = open("txt_files/example_1.txt", O_WRONLY);
+	fd_write_2 = open("txt_files/example_2.txt", O_WRONLY);
 	ret_write = write(fd_write_1, "test\n", 5);
 	ret_ft_write = ft_write(fd_write_2, "test\n", 5);
 	printf("   write: %d\n", ret_write);
@@ -146,8 +146,8 @@ int	main(void)
 
 	buf = malloc(500);
 	printf("1:\n");
-	fd_read_1 = open("example_1.txt", O_RDONLY);
-	fd_read_2 = open("example_2.txt", O_RDONLY);
+	fd_read_1 = open("txt_files/example_1.txt", O_RDONLY);
+	fd_read_2 = open("txt_files/example_2.txt", O_RDONLY);
 	ret_read = read(fd_read_1, buf, 4);
 	printf("   read: '%s',    ret_read: %d\n", buf, ret_read);
 	ret_ft_read = ft_read(fd_read_2, buf, 4);
@@ -163,7 +163,7 @@ int	main(void)
 	printf("error: %d, error_message: %s\n", error_read, strerror(error_read));
 
 	printf("3:\n");
-	fd_read_long = open("long_text.txt", O_RDONLY);
+	fd_read_long = open("txt_files/long_text.txt", O_RDONLY);
 	ret_read = read(fd_read_long, buf, 500);
 	printf("   read: \n%s,    ret_read: %d\n", buf, ret_read);
 	ret_ft_read = ft_read(fd_read_long, buf, 500);
